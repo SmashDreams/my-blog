@@ -135,9 +135,9 @@ comments:
   type: giscus
   giscus:
     repo: SmashDreams/SmashDreams-blog
-    repoId: ''
+    repoId: R_kgDOSM0HOg
     category: General
-    categoryId: ''
+    categoryId: DIC_kwDOSM0HOs4C7urr
     mapping: pathname
     lang: zh-CN
     inputPosition: top
