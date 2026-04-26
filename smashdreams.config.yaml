@@ -91,7 +91,7 @@ github:
   owner: SmashDreams
   repo: SmashDreams-blog
   branch: main
-  appId: 在部署端配置环境变量
+  appId: 3509708
   encryptKey: smashdreams_encrypt_key_2024
 user:
   name: SmashDreams
