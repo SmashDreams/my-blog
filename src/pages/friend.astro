@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout title="Friends" isIndexed={false}>
+  <!-- Friends Section -->
+  <div class="mb-10 animate-fade-in-up">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+      <Icon name="lucide:users" class="text-primary" />
+      <span>Friends</span>
+    </h1>
+    <p class="text-base-content/70 text-lg mb-6">
+      记录那些珍贵的友谊，分享彼此的故事。
+    </p>
+
+    <div class="flex flex-col items-center justify-center py-16">
+      <Icon name="lucide:link" class="w-16 h-16 text-base-content/30 mb-4" />
+      <p class="text-base-content/50 text-lg">友链正在收集中，敬请期待...</p>
+    </div>
+  </div>
+
+  <div class="divider my-6 animate-fade-in-up" style="animation-delay: 0.1s;">
+    <Icon name="lucide:heart" class="w-12 h-12 text-primary/50" />
+  </div>
+</BaseLayout>

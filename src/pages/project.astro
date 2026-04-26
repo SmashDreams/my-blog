@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout title="Projects" isIndexed={false}>
+  <div class="mb-8 animate-fade-in-up">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+      <Icon name="lucide:folder-git-2" class="text-primary" />
+      <span>My Projects</span>
+    </h1>
+    <p class="text-base-content/70 text-lg">
+      这里展示了我的一些个人项目、工具和实验性作品。
+    </p>
+  </div>
+
+  <!-- Projects will be added here as I build them -->
+  <div class="flex flex-col items-center justify-center py-16 animate-fade-in-up" style="animation-delay: 0.1s;">
+    <Icon name="lucide:construction" class="w-16 h-16 text-base-content/30 mb-4" />
+    <p class="text-base-content/50 text-lg">项目正在建设中，敬请期待...</p>
+  </div>
+
+  <div class="flex justify-center mt-12 animate-fade-in-up" style="animation-delay: 0.2s;">
+    <a
+      href="https://github.com/SmashDreams?tab=repositories"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary btn-outline gap-2 px-8"
+    >
+      <Icon name="lucide:github" class="w-5 h-5" />
+      <span>View More on GitHub</span>
+    </a>
+  </div>
+
+  <div class="divider my-6 animate-fade-in-up" style="animation-delay: 0.1s;">
+    <Icon name="lucide:heart" class="w-12 h-12 text-primary/50" />
+  </div>
+</BaseLayout>

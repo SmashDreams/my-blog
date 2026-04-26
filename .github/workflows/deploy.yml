@@ -1,0 +1,53 @@
+name: Deploy to Tencent Cloud
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+        env:
+          PUBLIC_GITHUB_OWNER: ${{ secrets.PUBLIC_GITHUB_OWNER }}
+          PUBLIC_GITHUB_REPO: ${{ secrets.PUBLIC_GITHUB_REPO }}
+          PUBLIC_GITHUB_BRANCH: ${{ secrets.PUBLIC_GITHUB_BRANCH }}
+          BLOG_SLUG_KEY: ${{ secrets.BLOG_SLUG_KEY }}
+
+      - name: Deploy to Tencent Cloud via rsync
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete --exclude='.git'
+          path: dist/
+          remote_path: /var/www/smashdreams/
+          remote_host: ${{ secrets.TENCENT_HOST }}
+          remote_user: ${{ secrets.TENCENT_USER }}
+          remote_key: ${{ secrets.TENCENT_SSH_KEY }}
+          remote_port: ${{ secrets.TENCENT_PORT || '22' }}

@@ -1,0 +1,159 @@
+site:
+  tab: SmashDreams
+  title: SmashDreams
+  description: 🌸 记录技术、生活与思考 —— SmashDreams 的个人博客
+  language: zh
+  favicon: /favicon.png
+  theme:
+    light: garden
+    dark: dracula
+    code: github-dark
+  date_format: ddd MMM DD YYYY
+  blog:
+    pageSize: 8
+  banner:
+    enableRandom: true
+    randomUrl: https://t.alcy.cc/ycy
+    randomCount: 5
+    height: 60vh
+    images:
+      - https://t.alcy.cc/ycy
+  pages:
+    home:
+      title: SmashDreams' Blog
+      subtitle: 在代码与文字之间，寻找无限可能
+      typewriterTexts:
+        - 💻 用代码构建世界，用文字记录思考
+        - 🌱 持续学习，持续成长
+        - 🚀 探索技术的边界
+        - ✨ 保持好奇，保持热情
+    friend:
+      title: 友人帐
+      subtitle: 记录那些珍贵的友谊，分享彼此的故事
+    about:
+      title: About Me
+      subtitle: 一个热爱技术与生活的开发者
+    navigation:
+      title: 网站导航
+      subtitle: 收藏的常用网站和工具链接
+    anime:
+      title: 追番
+      subtitle: 记录和分享我喜欢的动漫作品
+    project:
+      title: Projects
+      subtitle: 展示一些个人搭建的项目
+    music:
+      title: Cloud Music
+      subtitle: 沉浸式享受音乐时光
+  menu:
+    - id: home
+      text: 首页
+      href: /
+      svg: material-symbols:home-outline-rounded
+      target: _self
+    - id: navigation
+      text: 导航
+      href: /navigation
+      svg: material-symbols:explore-outline
+      target: _self
+    - id: entertainment
+      text: 娱乐
+      href: '#'
+      svg: material-symbols:play-circle-outline-rounded
+      target: _self
+      subItems:
+        - id: anime
+          text: 追番
+          href: /anime
+          svg: material-symbols:movie-outline
+          target: _self
+        - id: music
+          text: 音乐
+          href: /music
+          svg: material-symbols:music-note-rounded
+          target: _self
+    - id: project
+      text: 项目
+      href: /project
+      svg: material-symbols:code-blocks-outline
+      target: _self
+    - id: friend
+      text: 友人帐
+      href: /friend
+      svg: material-symbols:supervisor-account-outline-rounded
+      target: _self
+    - id: about
+      text: 关于
+      href: /about
+      svg: material-symbols:info-outline-rounded
+      target: _self
+github:
+  owner: SmashDreams
+  repo: SmashDreams-blog
+  branch: main
+  appId: 在部署端配置环境变量
+  encryptKey: smashdreams_encrypt_key_2024
+user:
+  name: SmashDreams
+  description: 在代码与文字之间，寻找无限可能 ✨
+  site: https://SmashDreams.online
+  avatar: /profile.png
+  sidebar:
+    social:
+      - href: https://github.com/SmashDreams
+        ariaLabel: Github
+        title: Github
+        svg: ri:github-line
+      - href: https://space.bilibili.com/你的B站UID
+        ariaLabel: BiliBili
+        title: BiliBili
+        svg: ri:bilibili-line
+      - href: https://x.com/SmashDreams
+        ariaLabel: X(twitter)
+        title: X(twitter)
+        svg: ri:twitter-line
+  footer:
+    social:
+      - href: https://github.com/SmashDreams
+        ariaLabel: Github
+        title: Github
+        svg: ri:github-line
+      - href: https://space.bilibili.com/你的B站UID
+        ariaLabel: BiliBili
+        title: BiliBili
+        svg: ri:bilibili-line
+      - href: https://x.com/SmashDreams
+        ariaLabel: X(twitter)
+        title: X(twitter)
+        svg: ri:twitter-line
+      - href: mailto:SmashDreams@outlook.com
+        ariaLabel: Email
+        title: Email
+        svg: ri:mail-line
+comments:
+  enable: false
+  type: giscus
+  giscus:
+    repo: SmashDreams/SmashDreams-blog
+    repoId: ''
+    category: General
+    categoryId: ''
+    mapping: pathname
+    lang: zh-CN
+    inputPosition: top
+    reactionsEnabled: '1'
+    emitMetadata: '0'
+    loading: lazy
+  waline:
+    serverURL: https://your-waline-server
+    lang: zh-CN
+    emoji:
+      - https://unpkg.com/@waline/emojis@1.1.0/weibo
+      - https://unpkg.com/@waline/emojis@1.1.0/bilibili
+    meta:
+      - nick
+      - mail
+      - link
+    requiredMeta: []
+    reaction: false
+    pageview: false

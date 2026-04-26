@@ -1,0 +1,103 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import Card from "@/components/temple/Card.astro";
+import GitHubStats from "@/components/mdx/GitHubStats.astro";
+---
+
+<BaseLayout title="About" isIndexed={false}>
+  <Card class="p-4 md:p-8">
+    <div class="space-y-10 mb-8">
+      <!-- Profile Section -->
+      <section class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+        <div class="avatar">
+          <div
+            class="w-32 h-32 md:w-40 md:h-40 rounded-xl ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden"
+          >
+            <img src="https://github.com/SmashDreams.png" alt="SmashDreams" width="160" height="160" loading="eager" />
+          </div>
+        </div>
+
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">SmashDreams</h1>
+          <p class="text-xl text-base-content/80 mb-4">开发者 & 技术爱好者</p>
+
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
+            <a
+              href="https://github.com/SmashDreams"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-outline gap-2"
+            >
+              <Icon name="lucide:github" class="w-4 h-4" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://x.com/SmashDreams"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-outline gap-2"
+            >
+              <Icon name="lucide:twitter" class="w-4 h-4" />
+              <span>Twitter</span>
+            </a>
+            <a href="mailto:SmashDreams@outlook.com" class="btn btn-sm btn-outline gap-2">
+              <Icon name="lucide:mail" class="w-4 h-4" />
+              <span>Email</span>
+            </a>
+          </div>
+
+          <div class="text-base-content/80 leading-relaxed">
+            <p>👋 你好！我是 SmashDreams，一名热爱技术的开发者。</p>
+            <p class="mt-2">💻 热衷于探索新技术，喜欢用代码解决问题，享受将想法变为现实的过程。</p>
+            <p class="mt-2">🌱 这个博客记录了我的技术学习、项目实践和生活思考。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub Stats -->
+      <section>
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Icon name="lucide:github" class="w-6 h-6 text-primary" />
+          <span>开源贡献</span>
+        </h2>
+
+        <GitHubStats username="SmashDreams" showLanguages={false} showCommitGraph={true} />
+      </section>
+
+      <!-- Tech Stack -->
+      <section>
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Icon name="lucide:code-2" class="w-6 h-6 text-primary" />
+          <span>技术栈</span>
+        </h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {
+            [
+              { name: "Astro", icon: "simple-icons:astro", color: "oklch(0.5 0.2 300)" },
+              { name: "JavaScript", icon: "simple-icons:javascript", color: "oklch(0.8 0.2 80)" },
+              { name: "TypeScript", icon: "simple-icons:typescript", color: "oklch(0.6 0.2 250)" },
+              { name: "React", icon: "simple-icons:react", color: "oklch(0.7 0.2 200)" },
+              { name: "Node.js", icon: "simple-icons:nodedotjs", color: "oklch(0.7 0.2 140)" },
+              { name: "TailwindCSS", icon: "simple-icons:tailwindcss", color: "oklch(0.6 0.2 220)" },
+              { name: "HTML5", icon: "simple-icons:html5", color: "oklch(0.7 0.2 30)" },
+              { name: "CSS3", icon: "simple-icons:css3", color: "oklch(0.7 0.2 220)" },
+              { name: "Git", icon: "simple-icons:git", color: "oklch(0.7 0.2 30)" },
+              { name: "Python", icon: "simple-icons:python", color: "oklch(0.7 0.2 250)" },
+              { name: "Docker", icon: "simple-icons:docker", color: "oklch(0.6 0.2 200)" },
+              { name: "Vue.js", icon: "simple-icons:vuedotjs", color: "oklch(0.6 0.2 120)" },
+            ].map((tech) => (
+              <div class="flex flex-col items-center justify-center p-4 bg-base-200 rounded-lg hover:bg-base-300 transition-colors">
+                <div class="text-3xl mb-2" style={`color: ${tech.color}`}>
+                  <Icon name={tech.icon} class="w-10 h-10" />
+                </div>
+                <span class="text-sm font-medium">{tech.name}</span>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </Card>
+</BaseLayout>
